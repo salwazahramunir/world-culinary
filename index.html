@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+    <div class="w-full max-w-sm bg-white p-8 rounded-lg shadow-md">
+        <h2 class="text-2xl font-semibold mb-6 text-center">Login</h2>
+        <form id="loginForm">
+            <label id="usernameLabel" for="username" class="block mb-2 text-gray-700">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter username"
+                class="w-full p-2 mb-4 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                required>
+
+            <label id="passwordLabel" for="password" class="block mb-2 text-gray-700">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter password"
+                class="w-full p-2 mb-4 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                required>
+
+            <button type="submit" id="loginButton"
+                class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition">Login</button>
+        </form>
+
+        <!-- Result box for error message -->
+        <div id="result" class="hidden mt-4 p-3 bg-red-100 text-red-700 rounded">Wrong username and password</div>
+    </div>
+
+    <script>
+        // TODO ADD SCRIPT 
+        document.getElementById("loginButton").addEventListener("click", function (event) {
+            event.preventDefault()
+
+            const username = document.getElementById("username").value
+            const password = document.getElementById("password").value
+            
+            // console.log(username, password);
+            
+            if(username !== "kelompok4" || password !== "qwerty123") {                
+                document.getElementById("result").style.display = "block"
+            } else {
+               window.location.href = "home.html"
+            }
+        })
+    </script>
+</body>
+
+</html>
